@@ -1,0 +1,139 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="description" content="This is a developing blog site." />
+    <meta name="author" content="Jerry Chaos" />
+    <meta name="applicable-device" content="pc,pad,mobile" />
+    <meta name="keywords" content="slog,blog,computer,program" />
+    <meta name="referrer" content="always" />
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+
+
+    <style>
+        body {
+            background: linear-gradient(90deg, rgba(200, 200, 200, 0.1) 3%, transparent 0),
+                linear-gradient(rgba(200, 200, 200, 0.1) 3%, transparent 0);
+            background-size: 20px 20px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <!-- 组件选择界面 -->
+    <template id="ID-tpl-dialog-pane-selector">
+        <div class="panel-selector">
+            <a data-slog="1">
+                <img src="./img/widget/html.png" />
+                <div>
+                    <h2>HTML</h2>
+                    <p>you can use what ever you want HTML tags to layout your article</p>
+                </div>
+            </a>
+            <a data-slog="11">
+                <img src="./img/widget/code.png" />
+                <div>
+                    <h2>Code</h2>
+                    <p>you can use what ever you want HTML tags to layout your article</p>
+                </div>
+            </a>
+            <a data-slog="-1">
+                <img src="./img/widget/github.png" />
+                <div>
+                    <h2>github</h2>
+                    <p>you can use what ever you want HTML tags to layout your article</p>
+                </div>
+            </a>
+            <a data-slog="8">
+                <img src="./img/widget/img.png" />
+                <div>
+                    <h2>image</h2>
+                    <p>you can use what ever you want HTML tags to layout your article</p>
+                </div>
+            </a>
+            <a data-slog="14">
+                <img src="./img/widget/katex.png" />
+                <div>
+                    <h2>KaTex</h2>
+                    <p>you can use what ever you want HTML tags to layout your article</p>
+                </div>
+            </a>
+            <a data-slog="2">
+                <img src="./img/widget/markdown.png" />
+                <div>
+                    <h2>Markdown</h2>
+                    <p>you can use what ever you want HTML tags to layout your article</p>
+                </div>
+            </a>
+            <a data-slog="13">
+                <img src="./img/widget/quote.png" />
+                <div>
+                    <h2>Quote</h2>
+                    <p>you can use what ever you want HTML tags to layout your article</p>
+                </div>
+            </a>
+            <a data-slog="9">
+                <img src="./img/widget/script.png" />
+                <div>
+                    <h2>Script</h2>
+                    <p>you can use what ever you want HTML tags to layout your article</p>
+                </div>
+            </a>
+            <a data-slog="-1">
+                <img src="./img/widget/text.png" />
+                <div>
+                    <h2>Text</h2>
+                    <p>you can use what ever you want HTML tags to layout your article</p>
+                </div>
+            </a>
+            <a data-slog="4">
+                <img src="./img/widget/todo.png" />
+                <div>
+                    <h2>TODO</h2>
+                    <p>you can use what ever you want HTML tags to layout your article</p>
+                </div>
+            </a>
+            <a data-slog="16">
+                <img src="./img/widget/video.png" />
+                <div>
+                    <h2>Video</h2>
+                    <p>you can use what ever you want HTML tags to layout your article</p>
+                </div>
+            </a>
+            <a data-slog="-1">
+                <img src="./img/widget/web-bookmark.png" />
+                <div>
+                    <h2>Bookmark</h2>
+                    <p>you can use what ever you want HTML tags to layout your article</p>
+                </div>
+            </a>
+            <a data-slog="15">
+                <img src="./img/widget/weblink.png" />
+                <div>
+                    <h2>Link</h2>
+                    <p>you can use what ever you want HTML tags to layout your article</p>
+                </div>
+            </a>
+        </div>
+    </template>
+</body>
+
+<script type="module">
+    import UILIB from "../../src/UIlib.js";
+
+    const _UIAPI = UILIB(document.body);
+
+
+    const b = _UIAPI.CreatePaneSelectorDialog()
+        .SetOnClick(evt => {
+            console.log(`selected widget type is:${evt.currentTarget.dataset.slog}`);
+        })
+    document.body.append(b.element);
+
+</script>
+
+</html>

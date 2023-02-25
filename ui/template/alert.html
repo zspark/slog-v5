@@ -1,0 +1,68 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="description" content="This is a developing blog site." />
+    <meta name="author" content="Jerry Chaos" />
+    <meta name="applicable-device" content="pc,pad,mobile" />
+    <meta name="keywords" content="slog,blog,computer,program" />
+    <meta name="referrer" content="always" />
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        body {
+            background: linear-gradient(90deg, rgba(200, 200, 200, 0.1) 3%, transparent 0),
+                linear-gradient(rgba(200, 200, 200, 0.1) 3%, transparent 0);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <template id="ID-tpl-alert">
+        <div class="modal">
+            <div class="rounded-lg py-5 px-6 mb-4 text-base min-w-[700px]" role="alert">
+                <h4 slog-mark-title class="text-2xl font-medium leading-tight mb-2">Well done!</h4>
+                <div slog-mark-content class="mb-4"> </div>
+                <hr class="border-gray-600 opacity-30"/>
+                <!-- <div class="mt-2 pt-2 flex flex-row-reverse">
+                <button slog-mark-bottom-btn type="button"
+                    class="bg-blue-500 hover:bg-blue-500/80 rounded-lg px-4 py-1  text-slate-50">
+                    确定
+                </button>
+            </div> -->
+                <div class="flex items-center justify-center pt-4">
+                    <div slog-mark-group class="inline-flex shadow-md hover:shadow-lg focus:shadow-lg" role="group">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button"
+            class="first:rounded-l-md last:rounded-r-md inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase hover:bg-blue-700 focus:bg-blue-700 focus:outline-none focus:ring-0 active:bg-blue-800 transition duration-150 ease-in-out">
+            确定
+        </button>
+    </template>
+
+</body>
+
+<script type="module">
+    import UILIB from "../../src/UIlib.js";
+    const _UIAPI = UILIB(document.body);
+
+    _UIAPI.CreateAlert()
+        .SetTitle('警告')
+        .SetContentHTML(`<p style="color:#009900">你确定不保存？</p>`)
+        .SetBackgroundColor(_UIAPI.AlertColor.INFO)
+        .SetBackgroundColor(_UIAPI.AlertColor.WARN)
+        .SetBackgroundColor(_UIAPI.AlertColor.ERROR)
+        // .SetBackgroundColor(_UIAPI.AlertColor.DEFAULT)
+        .AddButtons(['取消', '随机', '确定'], evt => { console.log(`index of clicked button is:${evt.currentTarget.slog_alert_btn_index}`); })
+        .Show();
+
+
+
+</script>
+
+</html>

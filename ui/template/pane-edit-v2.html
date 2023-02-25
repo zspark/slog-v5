@@ -1,0 +1,85 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="description" content="This is a developing blog site." />
+    <meta name="author" content="Jerry Chaos" />
+    <meta name="applicable-device" content="pc,pad,mobile" />
+    <meta name="keywords" content="slog,blog,computer,program" />
+    <meta name="referrer" content="always" />
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+
+
+    <style>
+        body {
+            background: linear-gradient(90deg, rgba(200, 200, 200, 0.1) 3%, transparent 0),
+                linear-gradient(rgba(200, 200, 200, 0.1) 3%, transparent 0);
+            background-size: 20px 20px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div style="height:100px"></div>
+
+    <template id="ID-tpl-pane-edit-v2">
+        <div class="pane-edit">
+            <div slog-mark-pane-menu class="pane-edit-menu">
+                <div left> </div>
+                <div right>
+                    <!-- <button type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path fill-rule="evenodd"
+                                d="M15 3.75a.75.75 0 01.75-.75h4.5a.75.75 0 01.75.75v4.5a.75.75 0 01-1.5 0V5.56l-3.97 3.97a.75.75 0 11-1.06-1.06l3.97-3.97h-2.69a.75.75 0 01-.75-.75zm-12 0A.75.75 0 013.75 3h4.5a.75.75 0 010 1.5H5.56l3.97 3.97a.75.75 0 01-1.06 1.06L4.5 5.56v2.69a.75.75 0 01-1.5 0v-4.5zm11.47 11.78a.75.75 0 111.06-1.06l3.97 3.97v-2.69a.75.75 0 011.5 0v4.5a.75.75 0 01-.75.75h-4.5a.75.75 0 010-1.5h2.69l-3.97-3.97zm-4.94-1.06a.75.75 0 010 1.06L5.56 19.5h2.69a.75.75 0 010 1.5h-4.5a.75.75 0 01-.75-.75v-4.5a.75.75 0 011.5 0v2.69l3.97-3.97a.75.75 0 011.06 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button> -->
+                </div>
+            </div>
+
+            <div class="pane-edit-content" slog-mark-pane-content></div>
+        </div>
+
+        <button type="button"></button>
+
+
+
+        <div class="pane-preview checkerboard"></div>
+        <div class="pane-edit-textarea" contenteditable></div>
+    </template>
+
+</body>
+
+<script type="module">
+    import UILIB from "../../src/UIlib.js";
+    const _UIAPI = UILIB(document.body);
+
+    const _menuClickFn = (evt) => {
+        let _e = evt.currentTarget;
+        if (_e.slog_name) {
+            const _toolName = _e.slog_name;
+            console.log('widget edit pane tool menu clicked:', _toolName);
+            b.ShowContentOfName(_toolName).ActiveTabOfName(_toolName);
+
+        }
+    }
+    const b = _UIAPI.CreatePaneEdit_v2()
+        .AddTab('HTML', _UIAPI.EditPaneMenuPosition.LEFT, _menuClickFn)
+        .AddTab("CSS", _UIAPI.EditPaneMenuPosition.LEFT, _menuClickFn)
+        .AddTab("JavaScript", _UIAPI.EditPaneMenuPosition.LEFT, _menuClickFn)
+        .AddTab("preview", _UIAPI.EditPaneMenuPosition.LEFT, _menuClickFn)
+        .AddContent('preview', 2)
+        .AddContent('HTML', 3)
+        .AddContent('CSS', 3)
+        .AddContent('JavaScript', 3)
+        .ShowContentOfName('HTML').ActiveTabOfName('HTML')
+
+    document.body.append(b.element);
+
+</script>
+
+</html>

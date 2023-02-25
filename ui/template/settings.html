@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="description" content="This is a developing blog site." />
+    <meta name="author" content="Jerry Chaos" />
+    <meta name="applicable-device" content="pc,pad,mobile" />
+    <meta name="keywords" content="slog,blog,computer,program" />
+    <meta name="referrer" content="always" />
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+
+
+    <style>
+        body {
+            background: linear-gradient(90deg, rgba(200, 200, 200, 0.1) 3%, transparent 0),
+                linear-gradient(rgba(200, 200, 200, 0.1) 3%, transparent 0);
+            background-size: 20px 20px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <template id="ID-tpl-settings">
+        <div class="flex items-start bg-slate-200 w-[80%] h-[80%]">
+            <ul slog-mark-settings-nav class="flex flex-col list-none border-r border-slate-400">
+                <li class="settings-nav-btn">
+                    <a data-slog-id="id-1">同步</a>
+                </li>
+                <li class="settings-nav-btn">
+                    <a data-slog-id="id-2" active>标签管理</a>
+                </li>
+                <li class="settings-nav-btn">
+                    <a data-slog-id="id-3">其他设置</a>
+                </li>
+            </ul>
+
+            <div slog-mark-settings-content class="m-4">
+                <div class="settings-nav-content" id="id-1">
+                    <div class="flex justify-center">
+                        <div>
+                            <div class="form-checkb">
+                                <input class="form-checkb-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-checkb-label" for="flexCheckDefault">
+                                    自动更新客户端程序
+                                </label>
+                            </div>
+                            <div class="form-checkb">
+                                <input class="form-checkb-input" type="checkbox" value="" id="flexCheckDefault">
+                                <label class="form-checkb-label" for="flexCheckDefault">
+                                    自动推送到远程仓库
+                                </label>
+                            </div>
+                            <div class="form-checkb">
+                                <input class="form-checkb-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                                <label class="form-checkb-label" for="flexCheckChecked">
+                                    保存片段成功后提示
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button"
+                        class="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">push到远程仓库</button>
+                    <div class="flex justify-center">
+                        <div class="mb-3 xl:w-96">
+                            <label for="exampleNumber0"
+                                class="form-label inline-block mb-2 text-gray-700">每隔多少秒检测一次更新</label>
+                            <input type="number" class=" form-control block w-full
+                              px-3 py-1.5 text-base font-normal
+                              text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300
+                              rounded transition ease-in-out
+                              m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+                            " id="exampleNumber0" placeholder="Number input" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="settings-nav-content" active id="id-2">
+                    <div contenteditable class="tag-container">
+                        a
+                        <div contenteditable="false" slog-mark-tag class="tag-item">TagA</div>
+                        b
+                        <div contenteditable="false" slog-mark-tag class="tag-item">TagB</div>
+                        c
+                        <div contenteditable="false" slog-mark-tag class="tag-item">TagC</div>
+                        d
+                    </div>
+                </div>
+                <div class="settings-nav-content" id="id-3">
+                    Tab 3 content vertical
+                </div>
+            </div>
+        </div>
+    </template>
+
+
+</body>
+
+<script type="module">
+    import UILIB from "../../src/UIlib.js";
+    const _UIAPI = UILIB(document.body);
+
+    const b = _UIAPI.CreateSettings();
+    document.body.append(b.element);
+
+</script>
+
+</html>

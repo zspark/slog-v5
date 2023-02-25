@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="description" content="This is a developing blog site." />
+    <meta name="author" content="Jerry Chaos" />
+    <meta name="applicable-device" content="pc,pad,mobile" />
+    <meta name="keywords" content="slog,blog,computer,program" />
+    <meta name="referrer" content="always" />
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+
+
+    <style>
+        body {
+            background: linear-gradient(90deg, rgba(200, 200, 200, 0.1) 3%, transparent 0),
+                linear-gradient(rgba(200, 200, 200, 0.1) 3%, transparent 0);
+            background-size: 20px 20px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <template id="ID-tpl-article-list">
+
+        <div class="page-list-item">
+            <div item class="page-list-item-content">
+                <div class="h-full" slog-mark-indent item-collapse-area></div>
+                <button item-collapser item-collapse-area>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+                        <path
+                            d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                    </svg>
+                </button>
+                <a item-name>ticle it's very long to display so what to do?</a>
+            </div>
+            <div container></div>
+        </div>
+
+
+    </template>
+
+</body>
+
+<script type="module">
+    import UILIB from "../../src/UIlib.js";
+    const _UIAPI = UILIB(document.body);
+
+    const _pageList = _UIAPI.CreatePageList(document.body);
+    _pageList
+        .BeforeMassiveAdd()
+        .AddAsLastChild(undefined, 'id-a', 0, 'article caption a')
+        .AddAsLastChild('id-a', 'id-a-a', 1, 'article caption a-a')
+        .AddAsLastChild('id-a', 'id-a-b', 1, 'article caption a-b')
+        .AddAsLastChild('id-a', 'id-a-c', 1, 'article caption a-c')
+        .AddAsLastChild(undefined, 'id-b', 0, 'article caption b')
+        .AddAsLastChild('id-b', 'id-b-a', 1, 'article caption b-a')
+        .AddAsNextSibling('id-b-a', 'id-b-b', 1, 'article caption b-b')
+        .AddAsNextSibling('id-b-b', 'id-b-c', 1, 'article caption b-c')
+        .AddAsNextSibling('id-b-c', 'id-b-d', 1, 'article caption b-d')
+        .AddAsNextSibling('id-b-d', 'id-b-e', 1, 'article caption b-e')
+        .AddAsNextSibling('id-b-e', 'id-b-f', 1, 'article caption b-f')
+        .AddAsNextSibling('id-b-f', 'id-b-g', 3, 'article caption b-g')
+        .AddAsLastChild(undefined, 'id-c', 0, 'article caption c')
+        .AddAsLastChild(undefined, 'id-d', 0, 'article caption d')
+        .AfterMassiveAdd()
+        .SetCaption('id-b-e', 'set by calling SetCaption()')
+        .SetDepth('id-b-g', 1)
+        .SetActive('id-b')
+        .SetActive('id-not-exist')
+        .Remove('id-a-c')
+        .Remove('id-not-exist')
+        .AddAsNextSibling('id-c', 'id-a', 0, 'sfssfsf')
+        .AddAsLastChild('id-c', 'id-a', 1, 'article caption c')
+        .SetClickCallback((result, data) => {
+            if (result === _UIAPI.PAGE_ITEM_CALLBACK_RESULT.CONTENT) {
+                _pageList.SetActive(data);
+            }
+        })
+
+</script>
+
+</html>

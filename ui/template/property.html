@@ -1,0 +1,111 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="description" content="This is a developing blog site." />
+    <meta name="author" content="Jerry Chaos" />
+    <meta name="applicable-device" content="pc,pad,mobile" />
+    <meta name="keywords" content="slog,blog,computer,program" />
+    <meta name="referrer" content="always" />
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+
+
+    <style>
+        body {
+            background: linear-gradient(90deg, rgba(200, 200, 200, 0.1) 3%, transparent 0),
+                linear-gradient(rgba(200, 200, 200, 0.1) 3%, transparent 0);
+            background-size: 20px 20px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <template id="ID-tpl-dialog-property">
+        <div class="panel-property">
+            <div class="flex flex-col gap-2 child:w-full">
+                <div>
+                    <img slog-mark-banner class="property-img" role="button" src="./img/banner.jpg" />
+                </div>
+
+                <!-- <div class="input-with-icon">
+                        <button type="button">📝</button>
+                        <input type="text" placeholder="arlticle name ..." />
+                    </div> -->
+
+                <div>
+                    <input slog-mark-name type="text" class="input" placeholder="添加文章标题" />
+                </div>
+
+                <div>
+                    <textarea slog-mark-desc type="text" rows="5" placeholder="添加文章描述" class="textarea"></textarea>
+                </div>
+            </div>
+
+            <div>
+                <label slog-mark-more-trigger class="text-gray-500 hover:text-gray-500/80 cursor-pointer">more :
+                </label>
+            </div>
+
+            <div slog-mark-more>
+                <div class="panel-property-checkboxes">
+                    <div class="flex">
+                        <label>文章对于访客是否可见：</label>
+                        <select>
+                            <option selected value="1">可见</option>
+                            <option value="2">不可见</option>
+                            <option value="3">与上一级文章的选择一样</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <input checked id="checkboxa" type="checkbox">
+                        <label for="checkboxa">是否显示目录</label>
+                    </div>
+
+                    <div>
+                        <input id="checkboxb" type="checkbox" />
+                        <label for="checkboxb">是否显示封面</label>
+                    </div>
+                    <div>
+                        <input id="checkboxc" type="checkbox" />
+                        <label for="checkboxc">是否显示属性</label>
+                    </div>
+
+                    <div>
+                        <input id="checkboxd" type="checkbox">
+                        <label for="checkboxd">Default checkbox</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-2 pt-2 flex flex-row-reverse">
+                <button slog-mark-bottom-btn type="button" class="btn-normal">
+                    保存并上载
+                </button>
+            </div>
+        </div>
+    </template>
+</body>
+
+<script type="module">
+    import UILIB from "../../src/UIlib.js";
+    const _UIAPI = UILIB(document.body);
+
+    const b = _UIAPI.CreatePropertyDialog()
+        .SetButtonCaption("保存并退出")
+        .SetName('关于CG的一些想法')
+        .SetDesc('May 21, 2021 · vue 监听键 盘 Esc事件. 前端 js 使浏览器窗口全屏与退出----浏览器全屏时 监测通过 esc按键 退出全屏 （退出全屏时有页面上的相关处理）. Borage21的博客. 3906. vue项目js 全屏监听esc - 掘金')
+        .SetBanner('../img/img.jpg')
+        .SetOnClick(evt => {
+            console.log(`button clicked`);
+        })
+
+    document.body.append(b.element);
+
+</script>
+
+</html>

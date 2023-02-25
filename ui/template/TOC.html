@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="description" content="This is a developing blog site." />
+    <meta name="author" content="Jerry Chaos" />
+    <meta name="applicable-device" content="pc,pad,mobile" />
+    <meta name="keywords" content="slog,blog,computer,program" />
+    <meta name="referrer" content="always" />
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+
+
+    <style>
+        body {
+            background: linear-gradient(90deg, rgba(200, 200, 200, 0.1) 3%, transparent 0),
+                linear-gradient(rgba(200, 200, 200, 0.1) 3%, transparent 0);
+            background-size: 20px 20px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div style="height:100px"></div>
+    <div id='tocc' style="padding:0 50px"></div>
+
+    <template id="ID-tpl-toc">
+        <ul class="panel-toc"> </ul>
+        <li class="toc-h1"><a></a></li>
+        <li class="toc-h2"><a></a></li>
+        <li class="toc-h3"><a></a></li>
+    </template>
+
+</body>
+
+<script type="module">
+    import UILIB from "../../src/UIlib.js";
+    const _UIAPI = UILIB(document.body);
+
+
+
+    const _tocc = document.body.querySelector('#tocc');
+    let _toc = _UIAPI.CreateTOC().AddItem(1, 'heading-A', '#').AddItem(2, 'heading-AA', '#').AddItem(3, 'heading-AAA', '#');
+    _tocc.append(_toc.element);
+    _toc = _UIAPI.CreateTOC().AddItem(1, 'heading-B', '#').AddItem(2, 'heading-BB', '#').AddItem(3, 'heading-BBB', '#');
+    _tocc.append(_toc.element);
+    _toc = _UIAPI.CreateTOC().AddItems([
+        { hx: 1, caption: 'heading-C', link: '#' },
+        { hx: 2, caption: 'heading-CC', link: '#' },
+        { hx: 3, caption: 'heading-CCC', link: '#' },
+        { hx: 1, caption: 'heading-D', link: '#' },
+        { hx: 2, caption: 'heading-DD', link: '#' },
+        { hx: 3, caption: 'heading-DDD', link: '#' }
+    ]);
+    _tocc.append(_toc.element);
+
+
+</script>
+
+</html>

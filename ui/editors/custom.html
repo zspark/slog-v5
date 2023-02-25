@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>custom editor</title>
+    <link href="../lib/slog/css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div slg-editor>
+        <div class="absolute rounded-t w-full slg-css-no-interaction">
+            <div class="flex justify-between text-sm">
+                <div class="pl-1 rounded-t text-gray-300">custom</div>
+                <div slg-buttons class="inline-flex h-5 pointer-events-auto">
+                    <button active class="rounded-bl" onclick="showAreaOf(this,'data')"> data </button>
+                    <button onclick="showAreaOf(this,'layout')"> layout </button>
+                    <button class="rounded-tr" onclick="showAreaOf(this,'action')"> action </button>
+                </div>
+            </div>
+        </div>
+        <div contenteditable active slg-textarea slg-textarea-data> </div>
+        <div contenteditable slg-textarea slg-textarea-layout> </div>
+        <div contenteditable slg-textarea slg-textarea-action> </div>
+    </div>
+</body>
+<script>
+    function showAreaOf(btn, name) {
+        let x = document.querySelectorAll(`[slg-textarea]`);
+        for (let i = 0; i < x.length; i++) {
+            x[i].removeAttribute('active');
+        }
+        x = document.querySelector(`[slg-textarea-${name}]`);
+        x.setAttribute('active', '');
+
+        x = document.querySelectorAll(`[slg-buttons]>button`);
+        for (let i = 0; i < x.length; i++) {
+            x[i].removeAttribute('active');
+        }
+        btn.setAttribute('active', '');
+    }
+
+    if (window.self !== window.top) {
+        // document.write("The page is in an iFrame");
+        // debugger;
+        
+    } else {
+        // document.write("The page is not in an iFrame");
+    }
+</script>
+
+</html>

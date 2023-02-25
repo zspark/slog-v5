@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    h1 {
+        @apply text-4xl;
+    }
+    h2 {
+        @apply text-3xl;
+    }
+    h3 {
+        @apply text-2xl;
+    }
+    h4 {
+        @apply text-xl;
+    }
+}
+
+* {
+    @apply text-gray-700;
+}
+
+[slg-login] input[type='checkbox']{
+    @apply w-4 h-4 text-blue-500 bg-gray-100 border-gray-300 rounded;
+}
+[slg-login] input[type='checkbox']+label{
+   @apply ml-1 text-sm;
+}
+[slg-login] input:not([type='checkbox']){
+   @apply bg-slate-100 rounded outline-none p-1;
+}
+
+/* input,textarea{
+    @apply outline-none px-1 py-1;
+} */
+
+.nav-button {
+    @apply py-2 px-2 block;
+}
+.nav-button > svg {
+    @apply w-6 h-6 stroke-slate-700 stroke-2;
+}
+.nav-button:hover > svg {
+    @apply stroke-slate-900;
+}
+.slg-css-no-interaction{
+    @apply select-none pointer-events-none;
+}
+
+/*****************************
+ widget CSS 
+ *****************************/
+
+ [slg-editor]{
+    @apply bg-slate-100 rounded relative;
+ }
+ /* [slg-editor] input,
+ section [slg-editor] textarea{
+    @apply bg-slate-100 rounded;
+    @apply focus:outline-dashed focus:outline-2;
+    @apply focus:outline-slate-500 focus:outline-offset-0;
+ } */
+ [slg-editor]:has(> [slg-textarea]:focus){
+    @apply outline-dashed outline-2 outline-slate-500;
+ }
+
+[slg-editor] [slg-textarea]{
+    @apply hidden rounded outline-none px-1 pb-1 pt-6;
+}
+[slg-editor] [slg-textarea][active]{
+   @apply block;
+}
+
+ [slg-editor] [slg-buttons] > button{
+    @apply bg-gray-300 text-gray-600 px-2 bg-opacity-70;
+    @apply hover:bg-opacity-100;
+ }
+ [slg-editor] [slg-buttons] > button[active]{
+    @apply bg-gray-400
+ }
+
+
+
+ 
+ section [slg-textarea-p]{
+    @apply absolute w-16 text-gray-900 font-bold text-right text-sm slg-css-no-interaction;
+ }
+ section [slg-textarea-p]+ div{
+    @apply rounded outline-none w-full;
+    @apply focus:bg-slate-200;
+    @apply empty:before:content-[attr(placeholder)] empty:before:text-gray-400;
+ }
+ section [slg-editor]:has([slg-focus]:focus){
+    @apply outline-dashed outline-2 outline-slate-500;
+ }
+
+
+
+
+ 
+ section [slg-action]{
+   @apply flex justify-end pt-0.5;
+}
+section [slg-action] > button{
+   @apply text-gray-500 text-sm;
+   @apply hover:text-gray-600;
+}
+/* section [slg-action] > img{
+  @apply w-4 h-4 stroke-red-300;
+  @apply hover:stroke-red-600;
+} */
+section [slg-action]>button{
+   @apply px-1;
+}
+section [slg-action]>button .bi{
+   @apply fill-gray-500;
+}
+section [slg-action]>button:hover .bi{
+   @apply fill-gray-600;
+}
+
+[slg-dropdown-widgets]{
+   @apply fixed top-0 left-0;
+}
+[slg-dropdown-widgets] li a{
+   @apply block px-4 py-2 hover:bg-gray-100 cursor-pointer;
+}
+[slg-dropdown-nav]{
+   @apply absolute;
+}
+[slg-dropdown-nav] li a{
+   @apply block px-4 py-1 hover:bg-gray-100 cursor-pointer;
+}

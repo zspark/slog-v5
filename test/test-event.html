@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8" />
+    <title>test - event</title>
+</head>
+
+<body>
+    <h1>checkout console.</h1>
+    <div style="width:500px; height:500px; background-color:aliceblue" id='a'>
+        <div style="width:200px; height:200px; background-color:antiquewhite" id='b'>
+        </div>
+    </div>
+</body>
+<script>
+
+    let _aElem = document.querySelector('#a');
+    _aElem.onclick = e => {
+        console.log(`a clicked`);
+    }
+
+    let _bElem = document.querySelector('#b');
+    _bElem.onclick = e => {
+        console.log(`b clicked`);
+
+        // what if i remove a's event;
+        //_aElem.onclick = null;  /// will not been invoked .
+        _aElem.onclick = e => {
+            console.log(`a clicked in a new func.`);
+        }
+    }
+
+</script>
+
+</html>

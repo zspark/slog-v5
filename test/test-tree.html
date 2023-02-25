@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="utf-8" />
+    <title>test - tree</title>
+    <script src="../.dist/assert-bundle.js"></script>
+    <script src="../.dist/tree-bundle.js"></script>
+</head>
+
+<body>
+    <h1>checkout console.</h1>
+</body>
+<script>
+
+    const t = new tree.Tree();
+    console.log('creating 5 nodes.');
+    let a = t.Print(t.Get({id: 'a'}));
+    let b = t.Print(t.Get({id: 'b'}));
+    let c = t.Print(t.Get({id: 'c'}));
+    let d = t.Print(t.Get({id: 'd'}));
+    let e = t.Print(t.Get({id: 'e'}));
+
+
+    //// ================================================================================
+    console.log('\nafter appending 10 sub-nodes to node e');
+    for (let i = 0; i < 10; i++) {
+        t.Append(t.Get({id: `e-${i}`}), e);
+    }
+    t.Print(e, true);
+
+
+
+    //// ================================================================================
+    console.log("\nappend b as a's child, c as b's, and so forth. then print a.");
+    t.Append(b, a);
+    t.Append(c, b);
+    t.Append(d, c);
+    t.Append(e, d);
+    t.Print(a, true);
+
+
+    //// ================================================================================
+    console.log("\nremove c from it's parent, then print a & c");
+    t.Remove(c);
+    console.log("print a");
+    t.Print(a, true);
+    console.log("print c");
+    t.Print(c, true);
+
+
+    //// ================================================================================
+    console.log("\nexchange b && e");
+    t.Exchange(b, e);
+    console.log("print a");
+    t.Print(a, true);
+    console.log("print c");
+    t.Print(c, true);
+
+
+    //// ================================================================================
+    console.log("\ndelete d, then print d");
+    t.Delete(d);
+    t.Print(d, true);
+
+</script>
+
+</html>

@@ -1,0 +1,129 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="description" content="This is a developing blog site." />
+    <meta name="author" content="Jerry Chaos" />
+    <meta name="applicable-device" content="pc,pad,mobile" />
+    <meta name="keywords" content="slog,blog,computer,program" />
+    <meta name="referrer" content="always" />
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+
+
+    <style>
+        body {
+            background: linear-gradient(90deg, rgba(200, 200, 200, 0.1) 3%, transparent 0),
+                linear-gradient(rgba(200, 200, 200, 0.1) 3%, transparent 0);
+            background-size: 20px 20px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <template id="ID-tpl-section">
+        <!-- section item ⚓➕⚙️⌛ -->
+        <section class="section">
+            <div slog-mark-head class="section-head">
+                <button slog-mark-create type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z" />
+                    </svg>
+
+                </button>
+                <button slog-mark-toggle type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                    </svg>
+                </button>
+            </div>
+            <div slog-mark-pane-container class="SBStyle section-body"> </div>
+        </section>
+    </template>
+
+</body>
+
+<script type="module">
+    import UILIB from "../../src/UIlib.js";
+    const _UIAPI = UILIB(document.body);
+
+   
+    const sc = _UIAPI.GetSectionContainer();
+    {
+        const s1 = _UIAPI.CreateSection('a');
+        s1.SetClickAction(evt => {
+            console.info(`section clicked:${evt.currentTarget.slog_WID}`);
+        })
+        // const dd = _UIAPI.CreatePaneEditDropdownLanguage('markdown');
+        // dd.SetChangeFn(evt => {
+        //     console.log(evt);
+        // }
+        // );
+        // const p1 = _UIAPI.CreatePaneEdit();
+        // p1
+        //     .AddMenu(_UIAPI.EditPaneMenuType.LANG, _UIAPI.EditPaneMenuPosition.LEFT, _menuClickFn)
+        //     .AddMenu(_UIAPI.EditPaneMenuType.ASSETS, _UIAPI.EditPaneMenuPosition.LEFT, _menuClickFn)
+        //     .AddDropdown(_UIAPI.EditPaneMenuType.LANG, dd)
+        // s1.SetPane(p1);
+        // sc.AddSection(s1);
+    }
+    {
+        const s1 = _UIAPI.CreateSection('b');
+        s1.SetClickAction(id => {
+            console.info(`section clicked:${id}`);
+        })
+        // const p1 = _UIAPI.CreatePaneEdit();
+        // p1
+        //     .AddMenu(_UIAPI.EditPaneMenuType.MOVE_UP, _UIAPI.EditPaneMenuPosition.RIGHT)
+        //     .AddMenu(_UIAPI.EditPaneMenuType.ASSETS, _UIAPI.EditPaneMenuPosition.LEFT)
+        // const p2 = _UIAPI.CreatePaneViewExecute();
+        // s1.SetPane(p1).SetPane(p2).SetPane(p1);
+        // sc.AddSection(s1);
+    }
+
+
+    {
+        let s2, p2;
+        s2 = _UIAPI.CreateSection('c');
+        // p2 = _UIAPI.CreatePaneViewTODO();
+        // p2.AddItem('nihao', -1).AddItem('nihao', 0).AddItem('nihao', 1);s2.SetPane(p2);
+        sc.AddSection(s2);
+        s2 = _UIAPI.CreateSection('d');
+        // p2 = _UIAPI.CreatePaneViewCode(); s2.SetPane(p2);
+        sc.AddSection(s2);
+        s2 = _UIAPI.CreateSection('e');
+        // p2 = _UIAPI.CreatePaneViewExecute(); s2.SetPane(p2);
+        sc.AddSection(s2);
+        s2 = _UIAPI.CreateSection('f');
+        // p2 = _UIAPI.CreatePaneViewNormal(); s2.SetPane(p2);
+        sc.AddSection(s2);
+        s2 = _UIAPI.CreateSection('g');
+        // p2 = _UIAPI.CreatePaneViewImage(); s2.SetPane(p2);
+        sc.AddSection(s2);
+        s2 = _UIAPI.CreateSection('h');
+        // p2 = _UIAPI.CreatePaneViewMath(); s2.SetPane(p2);
+        sc.AddSection(s2);
+        s2 = _UIAPI.CreateSection('i');
+        // p2 = _UIAPI.CreatePaneViewQuote(); s2.SetPane(p2);
+        sc.AddSection(s2);
+    }
+
+
+    const s2 = _UIAPI.CreateSection();
+    // const p2 = _UIAPI.CreatePaneViewExecute();
+    // s2.SetPane(p2);
+    s2.MoveUp().MoveUp().MoveUp().MoveDown().MoveDown();
+    sc.AddSection(s2);
+
+    // sc.RemoveAll();
+
+</script>
+
+</html>

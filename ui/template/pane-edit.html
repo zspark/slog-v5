@@ -1,0 +1,204 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="description" content="This is a developing blog site." />
+    <meta name="author" content="Jerry Chaos" />
+    <meta name="applicable-device" content="pc,pad,mobile" />
+    <meta name="keywords" content="slog,blog,computer,program" />
+    <meta name="referrer" content="always" />
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+
+
+    <style>
+        body {
+            background: linear-gradient(90deg, rgba(200, 200, 200, 0.1) 3%, transparent 0),
+                linear-gradient(rgba(200, 200, 200, 0.1) 3%, transparent 0);
+            background-size: 20px 20px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+    <template id="ID-tpl-pane-edit-dropdown">
+        <div class="pane-edit-expand">
+            <div>
+                <div>
+                    <input type="radio" name="flexRadioDefault" id="flexRadioDefault1" data-lang="cpp">
+                    <label for="flexRadioDefault1">CPP</label>
+                </div>
+                <div>
+                    <input type="radio" name="flexRadioDefault" id="flexRadioDefault2" data-lang="javascript">
+                    <label for="flexRadioDefault2"> JavaScript </label>
+                </div>
+                <div>
+                    <input type="radio" name="flexRadioDefault" id="flexRadioDefault3" data-lang="markdown">
+                    <label for="flexRadioDefault3"> Markdown </label>
+                </div>
+                <div>
+                    <input type="radio" name="flexRadioDefault" id="flexRadioDefault4" data-lang="lua">
+                    <label for="flexRadioDefault4"> Lua </label>
+                </div>
+                <div>
+                    <input type="radio" name="flexRadioDefault" id="flexRadioDefault5" data-lang="golang">
+                    <label for="flexRadioDefault5"> Golang </label>
+                </div>
+                <div>
+                    <input type="radio" name="flexRadioDefault" id="flexRadioDefault6" data-lang="java">
+                    <label for="flexRadioDefault6"> Java </label>
+                </div>
+                <div>
+                    <input type="radio" name="flexRadioDefault" id="flexRadioDefault7" data-lang="csharp">
+                    <label for="flexRadioDefault7"> C# </label>
+                </div>
+                <div>
+                    <input type="radio" name="flexRadioDefault" id="flexRadioDefault8" data-lang="rust">
+                    <label for="flexRadioDefault8"> Rust </label>
+                </div>
+                <div>
+                    <input type="radio" name="flexRadioDefault" id="flexRadioDefault9" data-lang="xml">
+                    <label for="flexRadioDefault9"> HTML </label>
+                </div>
+                <div>
+                    <input type="radio" name="flexRadioDefault" id="flexRadioDefault10" data-lang="css">
+                    <label for="flexRadioDefault10"> CSS </label>
+                </div>
+                <div>
+                    <input type="radio" name="flexRadioDefault" id="flexRadioDefault11" data-lang="powershell">
+                    <label for="flexRadioDefault11"> PowerShell </label>
+                </div>
+                <div>
+                    <input type="radio" name="flexRadioDefault" id="flexRadioDefault12" data-lang="yaml">
+                    <label for="flexRadioDefault12"> Yaml </label>
+                </div>
+
+                <div>
+                    <input type="radio" name="flexRadioDefault" id="flexRadioDefault13" data-lang="python">
+                    <label for="flexRadioDefault13"> Python </label>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="ID-tpl-pane-edit-menu">
+        <!-- up -->
+        <button type="button" data-slog-widget-tool="up" class="widget-menu-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3 4.5h14.25M3 9h9.75M3 13.5h5.25m5.25-.75L17.25 9m0 0L21 12.75M17.25 9v12" />
+            </svg>
+        </button>
+        <!-- down -->
+        <button type="button" data-slog-widget-tool="down" class="widget-menu-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3 4.5h14.25M3 9h9.75M3 13.5h9.75m4.5-4.5v12m0 0l-3.75-3.75M17.25 21L21 17.25" />
+            </svg>
+        </button>
+        <!-- save -->
+        <button type="button" data-slog-widget-tool="save" class="widget-menu-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9 3.75H6.912a2.25 2.25 0 00-2.15 1.588L2.35 13.177a2.25 2.25 0 00-.1.661V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 00-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859M12 3v8.25m0 0l-3-3m3 3l3-3" />
+            </svg>
+        </button>
+
+        <!-- preview -->
+        <button type="button" data-slog-widget-tool="preview" class="widget-menu-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+            </svg>
+        </button>
+
+        <!-- language -->
+        <button type="button" data-slog-widget-tool="lang" class="widget-menu-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M10.5 21l5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 016-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896.061 1.785.147 2.666.257m-4.589 8.495a18.023 18.023 0 01-3.827-5.802" />
+            </svg>
+        </button>
+
+        <!-- assets -->
+        <button type="button" data-slog-widget-tool="assets" class="widget-menu-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+            </svg>
+        </button>
+        <!-- delete -->
+        <button type="button" data-slog-widget-tool="delete" class="widget-menu-btn">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16">
+                </path>
+            </svg>
+        </button>
+
+        <!-- help -->
+        <button type="button" data-slog-widget-tool="help" class="widget-menu-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
+            </svg>
+        </button>
+
+        <!-- close(x) -->
+        <button type="button" data-slog-widget-tool="close" class="widget-menu-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+    </template>
+
+    <template id="ID-tpl-pane-edit">
+        <div class="pane-edit">
+            <div slog-mark-pane-menu class="pane-edit-menu">
+                <div left>
+                    <!-- <div class="h-4 border-r border-slate-200 last:hidden"></div> -->
+                </div>
+                <div right></div>
+            </div>
+
+            <div class="pane-edit-textarea" contenteditable slog-mark-pane-edit-textarea></div>
+        </div>
+    </template>
+
+</body>
+
+<script type="module">
+    import UILIB from "../../src/UIlib.js";
+
+    const _UIAPI = UILIB(document.body);
+
+    const _menuClickFn = (evt) => {
+        let _e = evt.currentTarget;
+        if (_e.hasAttribute('data-slog-widget-tool')) {
+            const _toolName = _e.dataset.slogWidgetTool;
+            console.log('widget edit pane tool menu clicked:', _toolName);
+        }
+    }
+    const dd = _UIAPI.CreatePaneEditDropdownLanguage('markdown');
+    dd.SetChangeFn(evt => {
+        console.log(evt);
+    }
+    );
+    const b = _UIAPI.CreatePaneEdit()
+        .AddMenu(_UIAPI.EditPaneMenuType.LANG, _UIAPI.EditPaneMenuPosition.LEFT, _menuClickFn)
+        .AddMenu(_UIAPI.EditPaneMenuType.ASSETS, _UIAPI.EditPaneMenuPosition.LEFT, _menuClickFn)
+        .AddMenu(_UIAPI.EditPaneMenuType.SAVE, _UIAPI.EditPaneMenuPosition.RIGHT, _menuClickFn)
+        .AddDropdown(_UIAPI.EditPaneMenuType.LANG, dd)
+
+    document.body.append(b.element);
+
+</script>
+
+</html>

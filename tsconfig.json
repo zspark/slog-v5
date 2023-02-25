@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "module": "es2022",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "rootDir": "./src/",
+        "outDir": ".build",
+        "strict": true,
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "typeRoots": [
+            "./node_modules/@types"
+        ]
+    },
+    "lib": [
+        "ES2020",
+        "dom"
+    ],
+    "include": [],
+    "files": [
+        "src/server/server.ts",
+        "src/client/init.ts",
+        "src/client/main.ts"
+    ],
+    "exclude": [
+        "**/*.spec.ts",
+        "node_modules/",
+        "src-old/"
+    ]
+}

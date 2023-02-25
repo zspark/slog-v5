@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="description" content="This is a developing blog site." />
+    <meta name="author" content="Jerry Chaos" />
+    <meta name="applicable-device" content="pc,pad,mobile" />
+    <meta name="keywords" content="slog,blog,computer,program" />
+    <meta name="referrer" content="always" />
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <template id="ID-tpl-toast">
+        <div class="m-1">
+            <!-- panel -->
+            <div slog-mark-bg
+                class="bg-red-500 flex items-start min-w-[200px] w-fit max-w-xs p-1 text-black rounded-lg shadow"
+                role="alert">
+                <div slog-mark-text class="p-3 overflow-x-hidden">Improve password difficulty.Improve password
+                    difficulty.Improve password
+                    difficulty.Improve password difficulty.Improve password difficulty.Improve password difficulty.
+                </div>
+
+                <button dialog-close type="button">
+                    <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </template>
+
+    <button id="btn1">new</button>
+</body>
+
+<script type="module">
+    import UILIB from "../../src/UIlib.js";
+    const _UIAPI = UILIB(document.body);
+
+    let b = _UIAPI.CreateToast()
+        .SetBackgroundColor('#00ff00')
+        .SetContentText('Improve password difficulty.Improve password difficulty.Improve passworddifficulty.Improve password difficulty.Improve password difficulty.Improve password d');
+
+    b = _UIAPI.CreateToast()
+        .SetBackgroundColor('#ff0000')
+        .SetContentText('jsdom is a community-driven project maintained by a team of volunteers. You could support jsdom by: 1. Getting professional support for js… See more.');
+
+    b = _UIAPI.CreateToast()
+        .SetBackgroundColor('#ffff00')
+        .SetContentText('Improve password dorddifficulty.I password d');
+
+    b = _UIAPI.CreateToast()
+        .SetContentHTML(`<h1>Improve</h1>
+<p style="color:#FFFFFF">password dorddifficulty.I password d</p>
+<button>OK</button><button>Cancel</button>`);
+
+
+    document.body.querySelector('#btn1').onclick = _ => {
+        const R = parseInt(Math.random() * 255).toString(16);
+        const G = parseInt(Math.random() * 255).toString(16);
+        const B = parseInt(Math.random() * 255).toString(16);
+        const b = _UIAPI.CreateToast()
+            .SetBackgroundColor(`#${R}${G}${B}`)
+            .SetContentText('Improve password dorddifficulty.I password d');
+    }
+
+</script>
+
+</html>

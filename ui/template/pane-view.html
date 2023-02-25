@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="description" content="This is a developing blog site." />
+    <meta name="author" content="Jerry Chaos" />
+    <meta name="applicable-device" content="pc,pad,mobile" />
+    <meta name="keywords" content="slog,blog,computer,program" />
+    <meta name="referrer" content="always" />
+    <link href="../style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<style>
+    body {
+        background: linear-gradient(90deg, rgba(200, 200, 200, 0.1) 3%, transparent 0),
+            linear-gradient(rgba(200, 200, 200, 0.1) 3%, transparent 0);
+        background-size: 20px 20px;
+    }
+</style>
+
+
+<body>
+    <h1>H1 - light DOM</h1>
+
+    <template id="ID-tpl-pane-view">
+        <div class="pane-view"></div>
+    </template>
+
+</body>
+
+<script type="module">
+    import UILIB from "../../src/UIlib.js";
+    const _UIAPI = UILIB(document.body);
+
+    let b = _UIAPI.CreatePaneViewNormal()
+        .SetHTML('<h1>H1 - shadow DOM</h1><h2>H2 - shadow DOM</h2>')
+        .SetCSSString(`h2{color:red;}`)
+    document.body.append(b.element);
+
+    b = _UIAPI.CreatePaneViewMath()
+        .SetHTML(`\[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]`)
+    document.body.append(b.element);
+
+    b = _UIAPI.CreatePaneViewImage()
+        .SetHTML(`<figure>
+    <img src="../img/img.jpg" alt="Elephant at sunset" class="select-none" />
+    <figcaption>An elephant at sunset</figcaption>
+</figure>`)
+    document.body.append(b.element);
+
+    b = _UIAPI.CreatePaneViewTODO()
+        .SetHTML(`
+<p fail>I am 18 years or older</p>
+<p done>I am 18 years or older</p>
+<p>I am 18 years or older</p>`)
+    document.body.append(b.element);
+
+    b = _UIAPI.CreatePaneViewCode()
+        .SetHTML(`<pre class="language-javascript">
+    <code>
+        <!-- for test only -->
+<span class="hljs-title">Release</span>(){
+    _clickFn = <span class="hljs-literal">undefined</span>;
+    _elemButton.<span class="hljs-property">onclick</span> = <span class="hljs-literal">undefined</span>;
+}
+    </code>
+</pre>`)
+    document.body.append(b.element);
+
+    b = _UIAPI.CreatePaneViewExecute()
+    document.body.append(b.element);
+
+    b = _UIAPI.CreatePaneViewQuote()
+        .SetHTML(`<blockquote>
+    <p slog-mark-content>"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
+</blockquote>`)
+    document.body.append(b.element);
+
+</script>
+
+</html>
